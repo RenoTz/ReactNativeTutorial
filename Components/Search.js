@@ -7,7 +7,7 @@ class Search extends React.Component {
 
   constructor(props) {
     super(props)
-    this.searchedText = "Potter" // valeur defaut pour le dev
+    this.searchedText = "La guerre des étoiles" // valeur defaut pour le dev
     this.page = 0 // Compteur pour connaître la page courante
     this.totalPages = 0 
     this.state = { 
@@ -40,7 +40,6 @@ class Search extends React.Component {
     this.setState({
       films: [],
     }, () => { 
-        console.log("Page : " + this.page + " / TotalPages : " + this.totalPages + " / Nombre de films : " + this.state.films.length)
         this._loadFilms() 
     })
   }

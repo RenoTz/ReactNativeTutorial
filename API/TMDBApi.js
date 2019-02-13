@@ -16,3 +16,22 @@ export function getFilmDetailFromApi (id) {
       .then((response) => response.json())
       .catch((error) => console.error(error));
 }
+
+export function getGenres (genres) {
+    return getNamesConcat(genres);
+}
+
+export function getCompagnies (companies) {
+    return getNamesConcat(companies);
+}
+
+function getNamesConcat(array){
+  var namesConcat = '';
+  array.map((c) => {
+    namesConcat += c.name
+     if(array.indexOf(c) < array.length - 1){
+      namesConcat += ' / '
+     }
+   })
+   return namesConcat;
+}
