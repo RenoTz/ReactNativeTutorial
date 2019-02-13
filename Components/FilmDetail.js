@@ -1,6 +1,8 @@
 import React from 'react'
 import { ActivityIndicator, Image, Text, ScrollView, StyleSheet, View } from 'react-native'
 import { getFilmDetailFromApi, getImageFromApi, getGenres, getCompagnies } from '../API/TMDBApi'
+import moment from 'moment'
+import numeral from 'numeral'
 
 class FilmDetail extends React.Component {
 
@@ -36,7 +38,7 @@ class FilmDetail extends React.Component {
                     <Text style={styles.title_text}>{this.state.film.title}</Text>
                 </View>
                 <View style={styles.description_container}>
-                    <Text style={styles.description_text} numberOfLines={14}>{this.state.film.overview}</Text>
+                    <Text style={styles.description_text} numberOfLines={24}>{this.state.film.overview}</Text>
                 </View>
                 <View style={styles.infos_sup_container}>
                   <Text style={styles.infos_sup_text}>Sorti le {moment(new Date(this.state.film.release_date)).format('DD/MM/YYYY')}</Text>
