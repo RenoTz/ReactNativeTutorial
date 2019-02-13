@@ -39,10 +39,10 @@ class FilmDetail extends React.Component {
                     <Text style={styles.description_text} numberOfLines={14}>{this.state.film.overview}</Text>
                 </View>
                 <View style={styles.infos_sup_container}>
-                  <Text style={styles.infos_sup_text}>Sorti le {this.state.film.release_date}</Text>
+                  <Text style={styles.infos_sup_text}>Sorti le {moment(new Date(this.state.film.release_date)).format('DD/MM/YYYY')}</Text>
                   <Text style={styles.infos_sup_text}>Note : {this.state.film.vote_average}</Text>
                   <Text style={styles.infos_sup_text}>Nombre de votes : {this.state.film.vote_count}</Text>
-                  <Text style={styles.infos_sup_text}>Budget : {this.state.film.budget}</Text>
+                  <Text style={styles.infos_sup_text}>Budget : {numeral(this.state.film.budget).format('0,0[.]00 $')}</Text>
                   <Text style={styles.infos_sup_text}>Genre(s) : {this.state.film.genres.map(function(genre){
                       return genre.name;
                     }).join(" / ")}
